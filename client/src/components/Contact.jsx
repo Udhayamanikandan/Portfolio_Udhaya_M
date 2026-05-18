@@ -6,18 +6,32 @@ export default function Contact() {
   const [status, setStatus] = useState('')
 
   const handleSubmit = async () => {
-    if (!form.name || !form.email || !form.message) {
-      setStatus('ERROR: ALL FIELDS REQUIRED')
-      return
-    }
-    try {
-      await `${import.meta.env.VITE_API_URL}/api/contact`
-      setStatus('✅ MESSAGE TRANSMITTED SUCCESSFULLY')
-      setForm({ name: '', email: '', message: '' })
-    } catch {
-      setStatus('❌ TRANSMISSION FAILED. TRY AGAIN.')
-    }
+  if (!form.name || !form.email || !form.message) {
+    setStatus('ERROR: ALL FIELDS REQUIRED')
+    return
   }
+
+  try {
+
+    await axios.post(
+      `${import.meta.env.VITE_API_URL}/api/contact`,
+      form
+    )
+
+    setStatus('✅ MESSAGE TRANSMITTED SUCCESSFULLY')
+
+    setForm({
+      name: '',
+      email: '',
+      message: ''
+    })
+
+  } catch {
+
+    setStatus('❌ TRANSMISSION FAILED. TRY AGAIN.')
+
+  }
+}
 
   const inputStyle = {
     width: '100%',
