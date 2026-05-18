@@ -12,7 +12,7 @@ export default function Projects() {
 
       try {
 
-        const res = await axios.get('/api/projects')
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/projects`)
 
         console.log(res.data)
 
