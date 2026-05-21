@@ -150,9 +150,8 @@ export default function Contact() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
             {[
               { label: 'udhayamanikandan3@gmail.com', href: 'mailto:udhayamanikandan3@gmail.com', color: 'var(--flag-saffron)' },
-              { label: 'GitHub Network', href: 'https://github.com/Udhaya-M', color: '#ffffff' },
-              { label: 'LinkedIn Link', href: 'https://linkedin.com/in/udhaya-m', color: 'var(--flag-green)' },
-              { label: '+91 6381441633', href: 'tel:+916381441633', color: 'var(--cyan)' }
+              { label: 'GitHub Network', href: 'https://github.com/Udhayamanikandan', color: '#ffffff' },
+              { label: 'LinkedIn Link', href: 'https://linkedin.com/in/connectwithudhayamanikandan', color: 'var(--flag-green)' }
             ].map(({ label, href, color }) => (
               <a key={label} href={href}
                 onClick={playClick}
